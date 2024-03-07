@@ -16,6 +16,12 @@ class HelloWorld {
         System.out.println("Subtraction: " + z.toStr());
         z = x.multiplication(y);
         System.out.println("Multiplication: " + z.toStr());
+        
+        
+        double modulo = x.modulo();
+        System.out.println("Modulo: " + modulo);
+        double argumento = x.argumento();
+        System.out.println("Fase o argumento: " + argumento);
     }
 }
 
@@ -48,7 +54,17 @@ class Complex{
     }
 
     String toStr(){
-        return (String.valueOf(this.real)) + "+" + String.valueOf(this.img);
+        return (String.valueOf(this.real)) + "+" + String.valueOf(this.img) + "i";
         
     }
+
+    double modulo(){
+        return Math.sqrt(this.real*this.real + this.img*this.img);
+    }
+
+    double argumento(){
+        return Math.atan(this.img / this.real);
+    }
+
+
 }
